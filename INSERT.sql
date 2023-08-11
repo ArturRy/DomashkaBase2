@@ -1,4 +1,4 @@
-         -- Задание 1
+              -- Задание 1
          
          --Продолжаем работать со своей базой данных. В этом задании заполните базу данных из домашнего задания к занятию "Работа с SQL. Создание БД". В ней должно быть:
 
@@ -40,6 +40,8 @@ INSERT INTO album
 VALUES(3, '1969-03-17', 'My Way');
 INSERT INTO album
 VALUES(4, '2019-05-17', 'Rammstein');
+INSERT INTO album
+VALUES(5, '2020-03-02', 'Test album');
 
 
 INSERT INTO track
@@ -58,6 +60,29 @@ INSERT INTO track
 VALUES(7, 'Yesterday', 240, 3);
 INSERT INTO track 
 VALUES(8, 'In the end', 232, 1);
+INSERT INTO track 
+VALUES(9, 'myself', 200, 1);
+INSERT INTO track 
+VALUES(10, 'by myself', 180, 1);
+INSERT INTO track 
+VALUES(11, 'bemy self', 250, 1);
+INSERT INTO track 
+VALUES(12, 'myself by', 300, 1);
+INSERT INTO track 
+VALUES(13, 'by myself by', 280, 1);
+INSERT INTO track 
+VALUES(14, 'beemy', 256, 1);
+INSERT INTO track 
+VALUES(15, 'premyne', 234, 1);
+INSERT INTO track 
+VALUES(16, 'my own', 255, 1);
+INSERT INTO track 
+VALUES(17, 'own my', 234, 1);
+INSERT INTO track 
+VALUES(18, 'my', 260, 1);
+INSERT INTO track 
+VALUES(19, 'oh my god', 300, 1);
+
 
  
 INSERT INTO songbook 
@@ -90,6 +115,8 @@ INSERT INTO singeralbum
 VALUES(4, 4);
 INSERT INTO singeralbum  
 VALUES(3, 3);
+INSERT INTO singeralbum  
+VALUES(2, 5);
 
 
 INSERT INTO songbooktrack  
@@ -112,6 +139,7 @@ INSERT INTO songbooktrack
 VALUES(5, 4);
 INSERT INTO songbooktrack  
 VALUES(7, 4);
+
 
 
 

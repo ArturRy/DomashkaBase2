@@ -4,7 +4,7 @@
 create table if not exists Album (
 	id SERIAL primary key,
 	year_of_production DATE not null,
-	check (year_of_production > 2000-01-01),
+	check (year_of_production < '2021-01-01'),
 	title VARCHAR(100) not null
 	);
 
