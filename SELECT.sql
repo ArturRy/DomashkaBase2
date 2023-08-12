@@ -21,7 +21,7 @@ WHERE pseudonym NOT LIKE '% %';
      -- Название треков, которые содержат слово «мой» или «my».
 
 SELECT title FROM track
-WHERE string_to_array(lower(title), ' ') && ARRAY ['my', 'мой'] = True
+WHERE string_to_array(lower(title), ' ') && ARRAY ['my', 'мой'] = True;
 
                       
                   --Задание 3
