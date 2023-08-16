@@ -23,6 +23,7 @@ WHERE pseudonym NOT LIKE '% %';
 SELECT title FROM track
 WHERE string_to_array(lower(title), ' ') && ARRAY ['my', 'мой'];
 
+
                       
                   --Задание 3
       -- Колличество исполнителей в каждом жанре
