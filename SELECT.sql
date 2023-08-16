@@ -1,4 +1,4 @@
-             --Задание 2
+               --Задание 2
      -- Название и продолжительность самого длительного трека.
 
 SELECT  title, duration_sec FROM track
@@ -21,7 +21,7 @@ WHERE pseudonym NOT LIKE '% %';
      -- Название треков, которые содержат слово «мой» или «my».
 
 SELECT title FROM track
-WHERE string_to_array(lower(title), ' ') && ARRAY ['my', 'мой'] = True
+WHERE string_to_array(lower(title), ' ') && ARRAY ['my', 'мой'];
 
                       
                   --Задание 3
@@ -36,7 +36,7 @@ GROUP BY g.name;
 
 SELECT COUNT(t.title) FROM album a 
 JOIN track t ON a.id = t.album_id
-WHERE date(a.year_of_production) BETWEEN '2019-01-01' AND '2020-12-31'
+WHERE date(a.year_of_production) BETWEEN '2019-01-01' AND '2020-12-31';
 
 
       -- Средняя продолжительность треков по каждому альбому.
@@ -68,13 +68,13 @@ WHERE si.pseudonym = 'Linkin park';
                          -- Задание 4
      --Названия альбомов, в которых присутствуют исполнители более чем одного жанра.
 
-SELECT a.title FROM album a
+SELECT DISTINCT a.title FROM album a
 JOIN singeralbum sa ON a.id = sa.album_id 
 JOIN singer s ON sa.singer_id = s.id 
 JOIN genresinger gs ON s.id = gs.singer_id 
-JOIN genre g  ON gs.genre_id = gs.genre_id 
-GROUP BY a.title 
-HAVING count(genre_id) > 1;
+JOIN genre g  ON gs.genre_id = g.id 
+GROUP BY a.title, gs.singer_id 
+HAVING COUNT(genre_id) > 1;
                      
      --Наименования треков, которые не входят в сборники.
 
@@ -96,6 +96,16 @@ WHERE t.duration_sec  = (SELECT min(duration_sec) FROM track);
 
       --Названия альбомов, содержащих наименьшее количество треков.
 
+SELECT a.title  FROM album a
+JOIN track t ON a.id = t.album_id 
+GROUP BY a.id 
+HAVING COUNT(t.id) = (
+    SELECT COUNT(t.id) FROM track
+    GROUP BY a.id 
+    ORDER BY 1
+    LIMIT 1)
+ORDER BY COUNT(a.id)
+LIMIT 1;
 
 
 
